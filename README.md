@@ -7,7 +7,7 @@ This web aplication allows users to add, delete and read history articles.
 1.Download or clone the source code
 
 ```bash
-git clone repolink
+git clone https://github.com/00010590wiut/WebTech.CW2.10590.git
 ```
 
 2.Install dependencies
@@ -28,3 +28,4 @@ node app.js
 - pug.js
 
 #### Source code public link
+https://github.com/00010590wiut/WebTech.CW2.10590
