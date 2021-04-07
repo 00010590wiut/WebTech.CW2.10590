@@ -1,0 +1,23 @@
+extends layout.pug
+
+block content
+  .content
+    h1.histories-title All history articles
+
+    if deletedHistory
+      p.success The history with id #{deletedHistory} is deleted!
+    .history-list-all-histories
+      if historiesList
+        each history in historiesList
+          div.history-card-all
+            .history-title-all
+              a.history-title(href=`/all-histories/${ history.id }`)= history.title
+            .history-description-all
+              a.history-description(href=`/all-histories/${ history.id }`)= history.description
+            .history-text-all
+              a.history-text(href=`/all-histories/${ history.id }`)= history.text
+            .all-card-button
+              a.delete(href=`/all-histories/${ history.id }/delete`) Delete
+
+      else
+        h3 No any histories

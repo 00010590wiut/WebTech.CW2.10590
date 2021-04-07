@@ -1,0 +1,24 @@
+extends layout.pug
+
+block content
+  .content-create
+    h1.form-title Add your history!
+
+    if error
+      p.error Error occured. Try again!
+
+    if success
+      p.success Your history was added! 
+
+    form.form(method='POST' action='/create-history')
+      .form-items
+        label Title of history
+        input.input-title(required type='text' name='title_of_history')
+      .form-items
+        label Information
+        textarea.input-description(name='description')
+      .form-items
+        label History text
+        textarea.history-text(required type ='text' name='text')
+
+      button.btn Add 

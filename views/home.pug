@@ -1,0 +1,29 @@
+extends layout.pug
+
+block content 
+    .content-home
+        .home-header
+            .home-header-items
+                h1.header-text Write History
+                h2.header-quote "History's being read <br> and <br> it's also being written"
+                a.create-link(href="/create-history") Create History
+        
+            if deletedHistory
+                p.success The history with id #{deletedHistory} is deleted!
+            
+    .list-container-home        
+        if historiesList
+            each history in historiesList
+                div.history-card
+                    .history-title-home
+                        a.history-title-home(href=`/home/${ history.id }`)= history.title
+                    .history-description-home
+                        a.history-description-home(href=`/home/${ history.id }`)= history.description
+                    .home-card-button
+                        a.more-link(href=`/home/${ history.id }`) Read more...
+
+            else
+                h3 No any history    
+
+    
+    
